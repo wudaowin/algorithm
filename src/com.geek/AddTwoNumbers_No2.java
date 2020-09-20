@@ -14,16 +14,16 @@ package com.geek;
  * 原因：342 + 465 = 807
  */
 public class AddTwoNumbers_No2 {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-
-    }
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
+//    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+//
+//    }
+//
+//    public class ListNode {
+//        int val;
+//        ListNode next;
+//
+//        ListNode(int x) {
+//            val = x;
+//        }
+//    }
 }

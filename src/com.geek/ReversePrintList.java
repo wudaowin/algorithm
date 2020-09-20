@@ -21,12 +21,4 @@ public class ReversePrintList {
         return array;
     }
 
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

@@ -1,6 +1,7 @@
 package com.geek;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -13,6 +14,7 @@ import java.util.Objects;
 public class CheckListLoop<T> {
     /**
      * 快慢指针法
+     *
      * @param node
      * @return
      */
@@ -37,20 +39,38 @@ public class CheckListLoop<T> {
 
     /**
      * 足迹法
+     *
      * @param node
      * @return
      */
-    private static final HashMap<Node,Integer> hashMap = new HashMap<>();
+    private static final HashMap<Node, Integer> hashMap = new HashMap<>();
 
-    private boolean hasLoopTwo(Node<T> node,Integer count){
-        if(node == null||node.next == null){
+
+    public ListNode hasCycle(ListNode node) {
+        if (node == null || node.next == null) {
+            return null;
+        }
+        Map<ListNode, Integer> map = new HashMap<>();
+        while (node != null) {
+            if (map.containsKey(node)) {
+                return node;
+            }
+            map.put(node, node.val);
+            node = node.next;
+        }
+        return null;
+    }
+
+
+    private boolean hasLoopTwo(Node<T> node, Integer count) {
+        if (node == null || node.next == null) {
             return false;
         }
-        if (hashMap.containsKey(node)){
+        if (hashMap.containsKey(node)) {
             return true;
-        }else {
-            hashMap.put(node,count);
-            return hasLoopTwo(node.next,count++);
+        } else {
+            hashMap.put(node, count);
+            return hasLoopTwo(node.next, count++);
         }
     }
 
